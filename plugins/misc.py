@@ -13,13 +13,13 @@ async def start(bot, message):
     username = (await bot.get_me()).username
     await add_user(message.from_user.id, message.from_user.first_name)
     button = [[
-        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{username}?startgroup=true')
+        InlineKeyboardButton('🦋 Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ 🦋', url=f'http://t.me/{username}?startgroup=true')
     ],[
-        InlineKeyboardButton("ʜᴇʟᴘ", callback_data="misc_help"),
-        InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="misc_about")
+        InlineKeyboardButton("〄 Hᴇʟᴘ", callback_data="misc_help"),
+        InlineKeyboardButton("⍟ Aʙᴏᴜᴛ", callback_data="misc_about")
     ],[
-        InlineKeyboardButton("🤖 ᴜᴘᴅᴀᴛᴇ", url="https://t.me/vj_botz"),
-        InlineKeyboardButton("🔍 ɢʀᴏᴜᴘ", url="https://t.me/vj_bot_disscussion")
+        InlineKeyboardButton(" Uᴘᴅᴀᴛᴇ", url="https://t.me/RB_Backup"),
+        InlineKeyboardButton("🔍 Gʀᴏᴜᴘ", url="https://t.me/RB_Movies_Request_Group")
     ]]
     await message.reply(text=script.START.format(message.from_user.mention),
                         disable_web_page_preview=True,
