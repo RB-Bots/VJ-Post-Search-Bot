@@ -59,6 +59,7 @@ async def verify_(bot, update):
        await bot.send_message(chat_id=user, text=f"<b>Your verification request for {name} has been declined 😐 Please Contact Admin</b>")
        await update.message.edit(update.message.text.html.replace("#NewRequest", "#Declined"))
 
+
 @Client.on_message(filters.command('leave') & filters.user(ADMIN))
 async def leave_a_chat(bot, message):
     if len(message.command) == 1:
