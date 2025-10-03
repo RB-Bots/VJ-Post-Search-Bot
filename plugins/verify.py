@@ -58,3 +58,30 @@ async def verify_(bot, update):
        await delete_group(id)
        await bot.send_message(chat_id=user, text=f"<b>Your verification request for {name} has been declined 😐 Please Contact Admin</b>")
        await update.message.edit(update.message.text.html.replace("#NewRequest", "#Declined"))
+
+@Client.on_message(filters.command('leave') & filters.user(ADMIN))
+async def leave_a_chat(bot, message):
+    if len(message.command) == 1:
+        return await message.reply('Give me a chat id')
+    chat = message.command[1]
+    if bool(_verify)==False:
+        return await m.edit("This chat is not verified!\nuse /verify")
+    try:
+        chat = int(chat)
+    except:
+        chat = chat
+    try:
+        buttons = [[
+            InlineKeyboardButton('Support', url='t.me/Govind_Rawat921')
+        ]]
+        reply_markup=InlineKeyboardMarkup(buttons)
+        await bot.send_message(
+            chat_id=chat,
+            text='<b>Hello Friends, \nMy admin has told me to leave from group so i go! If you wanna add me again contact my support group.</b>',
+            reply_markup=reply_markup,
+        )
+
+        await bot.leave_chat(chat)
+        await message.reply(f"left the chat `{chat}`")
+    except Exception as e:
+        await message.reply(f'Error - {e}')
