@@ -19,7 +19,7 @@ async def send_message_in_chunks(client, chat_id, text):
 
 
 async def delete_after_delay(message: Message, delay):
-    await asyncio.sleep(delay)
+    await asyncio.sleep(10)
     try:
         await message.delete()
     except:
