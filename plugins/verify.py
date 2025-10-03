@@ -55,7 +55,7 @@ async def verify_(bot, update):
        await bot.send_message(chat_id=user, text=f"💢 <b>Your verification request for {name} has been approved</b> ✅")
        await update.message.edit(update.message.text.html.replace("#NewRequest", "#Approved"))
     else:
-       await delete_group(id)
+       await delete_group(id, {"verified":False})
        await bot.send_message(chat_id=user, text=f"<b>Your verification request for {name} has been declined 😐 Please Contact Admin</b>")
        await update.message.edit(update.message.text.html.replace("#NewRequest", "#Declined"))
 
@@ -65,7 +65,7 @@ async def leave_a_chat(bot, message):
     if len(message.command) == 1:
         return await message.reply('Give me a chat id')
     chat = message.command[1]
-    if bool(_verify)==False:
+    if bool(verified)==False:
         return await m.edit("This chat is not verified!\nuse /verify")
     try:
         chat = int(chat)
