@@ -22,7 +22,7 @@ async def _verify(bot, message):
        return await message.reply(f"❌ {user_name} Need to start me in PM!")
     if message.from_user.id != user_id:
        return await message.reply(f"<b>Only {user.mention} can use this command 😁</b>")
-    if verified==True:
+    if verified==False:
        return await message.reply("<b>This Group is already verified!</b>")
     try:
        link = (await bot.get_chat(message.chat.id)).invite_link     
@@ -65,7 +65,7 @@ async def leave_a_chat(bot, message):
     if len(message.command) == 1:
         return await message.reply('Give me a chat id')
     chat = message.command[1]
-    if bool(verified)==False:
+    if  verified==False:
         return await m.edit("This chat is not verified!\nuse /verify")
     try:
         chat = int(chat)
