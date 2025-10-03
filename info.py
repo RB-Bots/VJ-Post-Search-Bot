@@ -7,10 +7,10 @@
 import os
 from os import environ
 
-API_ID       = int(environ.get("API_ID", ""))
-API_HASH     = environ.get("API_HASH", "")
+API_ID       = int(environ.get("API_ID", "24250028"))
+API_HASH     = environ.get("API_HASH", "0a71f51e0f1459c39ecdf2a28d59ad5a")
 BOT_TOKEN    = environ.get("BOT_TOKEN", "")
 DATABASE_URI = environ.get("DATABASE_URI", "")
-LOG_CHANNEL  = int(environ.get("LOG_CHANNEL", ""))
-ADMIN        = int(environ.get("ADMIN", ""))
+LOG_CHANNEL  = int(environ.get("LOG_CHANNEL", "-1003154634305"))
+ADMIN        = int(environ.get("ADMIN", "1715500452"))
 CHANNEL      = environ.get("CHANNEL", "@VJ_Botz")
